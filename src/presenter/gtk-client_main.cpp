@@ -1,0 +1,89 @@
+#include "gpc.h"
+#include "eventListener.h"
+#include "../model/grubEnv.h"
+#include "../view/grublistCfgDlgGtk.h"
+#include "../view/aboutDialogGtk.h"
+#include "../view/grubInstallDlgGtk.h"
+#include "../view/partitionChooserGtk.h"
+#include "../view/scriptAddDlgGtk.h"
+#include "../view/settingsDlgGtk.h"
+#include "glibMutex.h"
+#include "glibThreadController.h"
+#include "streamLogger.h"
+#include <iostream>
+
+int main(int argc, char** argv){
+	setlocale( LC_ALL, "");
+	bindtextdomain( "gpc", LOCALEDIR);
+	textdomain( "gpc" );
+	Gtk::Main app(argc, argv);
+	Glib::thread_init();
+	GrubEnv env;
+	GPC presenter(env);
+	GrublistCfg listcfg(env);
+	GrublistCfgDlgGtk listCfgView;
+	SettingsManagerDataStore settings(env);
+	SettingsManagerDataStore settingsOnDisk(env);
+	GrubInstaller installer(env);
+	GrubInstallDlgGtk installDlg;
+	ScriptAddDlgGtk scriptAddDlg;
+	MountTable mountTable;
+	PartitionChooserGtk partitionChooser;
+	GrublistCfg savedListCfg(env);
+	FbResolutionsGetter fbResolutionsGetter;
+	GrubSettingsDlgGtk settingsDlg;
+	DeviceDataList deviceDataList;
+	AboutDialogGtk aboutDialog;
+	GlibMutex listCfgMutex1;
+	GlibMutex listCfgMutex2;
+	GlibThreadController threadC(presenter);
+	presenter.setListCfg(listcfg);
+	presenter.setListCfgDlg(listCfgView);
+	presenter.setSettingsDialog(settingsDlg);
+	presenter.setSettingsManager(settings);
+	presenter.setSettingsBuffer(settingsOnDisk);
+	presenter.setInstaller(installer);
+	presenter.setInstallDlg(installDlg);
+	presenter.setScriptAddDlg(scriptAddDlg);
+	presenter.setPartitionChooser(partitionChooser);
+	presenter.setSavedListCfg(savedListCfg);
+	presenter.setFbResolutionsGetter(fbResolutionsGetter);
+	presenter.setDeviceDataList(deviceDataList);
+	presenter.setMountTable(mountTable);
+	presenter.setAboutDialog(aboutDialog);
+	presenter.setThreadController(threadC);
+	EventListener evt(presenter);
+	listCfgView.setEventListener(evt);
+	installDlg.setEventListener(evt);
+	scriptAddDlg.setEventListener(evt);
+	settingsDlg.setEventListener(evt);
+	partitionChooser.setEventListener(evt);
+	listcfg.setEventListener(evt);
+	installer.setEventListener(evt);
+	fbResolutionsGetter.setEventListener(evt);
+	StreamLogger logger(std::cout);
+	presenter.setLogger(logger);
+	listcfg.setLogger(logger);
+	listCfgView.setLogger(logger);
+	settings.setLogger(logger);
+	settingsOnDisk.setLogger(logger);
+	installer.setLogger(logger);
+	installDlg.setLogger(logger);
+	scriptAddDlg.setLogger(logger);
+	mountTable.setLogger(logger);
+	partitionChooser.setLogger(logger);
+	savedListCfg.setLogger(logger);
+	fbResolutionsGetter.setLogger(logger);
+	settingsDlg.setLogger(logger);
+	deviceDataList.setLogger(logger);
+	aboutDialog.setLogger(logger);
+	listCfgMutex1.setLogger(logger);
+	listCfgMutex2.setLogger(logger);
+	threadC.setLogger(logger);
+	env.setLogger(logger);
+	listcfg.setMutex(listCfgMutex1);
+	savedListCfg.setMutex(listCfgMutex2);
+	presenter.init();
+	app.run();
+}
+

@@ -1,0 +1,496 @@
+msgid ""
+msgstr ""
+
+#: ../src/presenter/grubCustomizer.cpp:417
+msgid "No script found"
+msgstr ""
+
+#: ../src/presenter/grubCustomizer.cpp:486
+msgid "loading configuration…"
+msgstr ""
+
+#: ../src/presenter/grubCustomizer.cpp:500
+#: ../src/view/grublistCfgDlgGtk.cpp:355
+msgid " (custom)"
+msgstr ""
+
+#: ../src/presenter/grubCustomizer.cpp:528
+msgid "Configuration has been saved"
+msgstr ""
+
+#: ../src/presenter/grubCustomizer.cpp:531
+msgid "updating configuration"
+msgstr ""
+
+#: ../src/presenter/grubCustomizer.cpp:539
+msgid " not found. Is grub2 installed?"
+msgstr ""
+
+#: ../src/presenter/grubCustomizer.cpp:544
+msgid " couldn't be executed successfully. You must run this as root!"
+msgstr ""
+
+#: ../src/presenter/grubCustomizer.cpp:599
+msgid "Name the Entry"
+msgstr ""
+
+#: ../src/presenter/grubCustomizer.cpp:632
+msgid "cannot move this entry"
+msgstr ""
+
+#: ../src/view/aboutDialogGtk.cpp:36
+msgid ""
+"Grub Customizer is a graphical interface to configure the grub2/burg settings"
+msgstr ""
+
+#: ../src/view/grubInstallDlgGtk.cpp:22
+msgid ""
+"Install the bootloader to MBR and put some\n"
+"files to the bootloaders data directory\n"
+"(if they don't already exist)."
+msgstr ""
+
+#: ../src/view/grubInstallDlgGtk.cpp:23
+msgid "_Device: "
+msgstr ""
+
+#: ../src/view/grubInstallDlgGtk.cpp:33
+msgid "Install to MBR"
+msgstr ""
+
+#: ../src/view/grubInstallDlgGtk.cpp:50
+msgid "The bootloader has been installed successfully"
+msgstr ""
+
+#: ../src/view/grubInstallDlgGtk.cpp:55
+msgid "Error while installing the bootloader"
+msgstr ""
+
+#: ../src/view/grubInstallDlgGtk.cpp:71
+msgid "installing the bootloader…"
+msgstr ""
+
+#: ../src/view/grubInstallDlgGtk.cpp:76
+msgid "Please type a device string!"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:28
+msgid "_File"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:29
+msgid "_Edit"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:29
+msgid "_View"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:29
+msgid "_Help"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:30
+msgid "_Install to MBR …"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:34
+msgid "BURG found!"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:35
+msgid "No Bootloader found"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:63
+msgid "Add a script to your configuration"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:65
+msgid "Remove a script from your configuration"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:71
+msgid "Move up the selected entry or script"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:73
+msgid "Move down the selected entry or script"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:81
+msgid "reload configuration"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:84
+msgid "Edit grub preferences"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:113
+msgid "Select _partition …"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:120
+msgid "Do you want to configure BURG instead of grub2?"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:127
+msgid "Do you want to select another root partition?"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:168
+msgid "BURG Mode"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:172
+msgid "Save configuration and generate a new "
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:256
+msgid "Proxy binary not found!"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:257
+msgid ""
+"You will see all entries (uncustomized) when you run grub. This error accurs "
+"(in most cases), when you didn't install grub gustomizer currectly."
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:263
+msgid "(new Entries of %1)"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:265
+msgid "(new Entries)"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:489
+msgid "Default title: "
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:581
+msgid "The saved configuration is not up to date!"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:582
+msgid ""
+"The generated configuration didn't equal to the saved configuration on "
+"startup. So what you see now may not be what you see when you restart your "
+"pc. To fix this, click update!"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:585
+msgid "_Quit without update"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:588
+msgid "_Update & Quit"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:592
+msgid "Do you want to save your modifications?"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:595
+msgid "_Quit without saving"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:598
+msgid "_Save & Quit"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:601
+msgid "AND: your modifications are still unsaved, update will save them too!"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:655 ../src/view/settingsDlgGtk.cpp:123
+msgid "is active"
+msgstr ""
+
+#: ../src/view/grublistCfgDlgGtk.cpp:656 ../src/view/settingsDlgGtk.cpp:124
+msgid "name"
+msgstr ""
+
+#: ../src/view/partitionChooserGtk.cpp:23
+msgid "_use another partition: "
+msgstr ""
+
+#: ../src/view/partitionChooserGtk.cpp:24
+msgid "Mount selected Filesystem"
+msgstr ""
+
+#: ../src/view/partitionChooserGtk.cpp:25
+msgid "Unmount mounted Filesystem"
+msgstr ""
+
+#: ../src/view/partitionChooserGtk.cpp:27
+msgid ""
+"These are the mountpoints of your fstab file.\n"
+"Please select every grub/boot related partition."
+msgstr ""
+
+#: ../src/view/partitionChooserGtk.cpp:48
+msgid "partition"
+msgstr ""
+
+#: ../src/view/partitionChooserGtk.cpp:49
+msgid "type"
+msgstr ""
+
+#: ../src/view/partitionChooserGtk.cpp:50
+msgid "label"
+msgstr ""
+
+#: ../src/view/partitionChooserGtk.cpp:82
+msgid "Grub Customizer: Partition chooser"
+msgstr ""
+
+#: ../src/view/partitionChooserGtk.cpp:86
+msgid "Select and mount your root partition"
+msgstr ""
+
+#: ../src/view/partitionChooserGtk.cpp:88
+msgid "Select required submountpoints"
+msgstr ""
+
+#: ../src/view/partitionChooserGtk.cpp:94
+msgid "Partition Chooser"
+msgstr ""
+
+#: ../src/view/partitionChooserGtk.cpp:168
+msgid "Mount failed!"
+msgstr ""
+
+#: ../src/view/partitionChooserGtk.cpp:169
+msgid "umount failed!"
+msgstr ""
+
+#: ../src/view/partitionChooserGtk.cpp:170
+msgid "This seems not to be a root file system (no fstab found)"
+msgstr ""
+
+#: ../src/view/partitionChooserGtk.cpp:171
+msgid "Couldn't mount the selected partition"
+msgstr ""
+
+#: ../src/view/partitionChooserGtk.cpp:172
+msgid "Couldn't umount the selected partition"
+msgstr ""
+
+#: ../src/view/partitionChooserGtk.cpp:240
+msgid ""
+"You selected the option for choosing another partition.\n"
+"Please note: The os-prober may not find your actually running system.\n"
+"So run Grub Customizer on the target system\n"
+"again and save the configuration (or run update-grub/update-burg)\n"
+"to get the entry back!"
+msgstr ""
+
+#: ../src/view/partitionChooserGtk.cpp:242
+msgid "You started Grub Customizer using the live CD."
+msgstr ""
+
+#: ../src/view/partitionChooserGtk.cpp:244
+msgid ""
+"Before you can edit your grub configuration we have to\n"
+"mount the required partitions.\n"
+"\n"
+"This assistant will help you doing this.\n"
+"\n"
+"\n"
+"Please ensure the target system is based on the same cpu architecture\n"
+"as the actually running one.\n"
+"If not, you will get an error message when trying to load the configuration."
+msgstr ""
+
+#: ../src/view/scriptAddDlgGtk.cpp:23
+msgid "Script to insert:"
+msgstr ""
+
+#: ../src/view/scriptAddDlgGtk.cpp:25
+msgid "Preview:"
+msgstr ""
+
+#: ../src/view/scriptAddDlgGtk.cpp:27
+msgid "Add script"
+msgstr ""
+
+#: ../src/view/scriptAddDlgGtk.cpp:43
+msgid "Entry"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:65
+msgid "white"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:66
+msgid "yellow"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:67
+msgid "light-cyan"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:68
+msgid "cyan"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:69
+msgid "light-blue"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:70
+msgid "blue"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:71
+msgid "light-green"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:72
+msgid "green"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:73
+msgid "light-magenta"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:74
+msgid "magenta"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:75
+msgid "light-red"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:76
+msgid "red"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:77
+msgid "brown"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:78
+msgid "light-gray"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:79
+msgid "dark-gray"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:80
+msgid "transparent"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:80
+msgid "black"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:92
+msgid "pre_defined: "
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:92
+msgid "previously _booted entry"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:93
+msgid "default entry"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:93
+msgid "visibility"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:93
+msgid "show menu"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:94
+msgid "Timeout"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:94
+msgid "Seconds"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:94
+msgid "kernel parameters"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:95
+msgid "generate recovery entries"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:95
+msgid "look for other operating systems"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:96
+msgid "custom resolution: "
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:97
+msgid "font color"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:97
+msgid "background"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:98
+msgid "normal:"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:98
+msgid "highlight:"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:99
+msgid "menu colors"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:99
+msgid "background image"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:100
+msgid "remove background"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:101
+msgid ""
+"To get the colors above working,\n"
+"you have to select a background image!"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:104
+msgid "settings"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:108
+msgid "_General"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:109
+msgid "A_ppearance"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:110
+msgid "_Advanced"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:125
+msgid "value"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:295
+msgid "Entry %1 (by position)"
+msgstr ""
+
+#: ../src/view/settingsDlgGtk.cpp:520
+msgid ""
+"This option doesn't work when the \"os-prober\" script finds other operating "
+"systems. Disable \"%1\" if you don't need to boot other operating systems."
+msgstr ""

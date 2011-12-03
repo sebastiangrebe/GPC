@@ -1,0 +1,14 @@
+
+[Desktop Entry]
+Name=GPC
+Comment[de]=Grub anpassen
+Comment[en]=Customize grub
+Exec=su-to-root -X -c gpc
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+StartupNotify=false
+Categories=GNOME;GTK;System;
+Icon=/usr/share/icons/hicolor/128x128/apps/gpc.svg
+Name[de]=GPC
+GenericName[de]=Grub Configurator

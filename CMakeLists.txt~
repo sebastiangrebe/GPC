@@ -1,0 +1,97 @@
+project(GPC)
+cmake_minimum_required(VERSION 2.6.4)
+
+find_package(PkgConfig)
+
+pkg_check_modules(GTKMM gtkmm-2.4)
+pkg_check_modules(GTHREAD gthread-2.0)
+
+
+link_directories(
+    ${GTKMM_LIBRARY_DIRS}  )
+
+include_directories(
+    ${GTKMM_INCLUDE_DIRS}  )
+
+add_executable(gpc
+	src/model/entry.cpp
+	src/model/grublistCfg.cpp
+	src/view/grublistCfgDlgGtk.cpp
+	src/view/grubInstallDlgGtk.cpp
+	src/presenter/gtk-client_main.cpp
+	src/presenter/gpc.cpp
+	src/presenter/eventListener.cpp
+	src/model/libproxyscript_parser.cpp
+	src/view/partitionChooserGtk.cpp
+	src/model/mountTable.cpp
+	src/model/proxy.cpp
+	src/model/proxylist.cpp
+	src/model/pscriptname_translator.cpp
+	src/model/repository.cpp
+	src/model/rule.cpp
+	src/model/script.cpp
+	src/model/deviceDataList.cpp
+	src/model/grubEnv.cpp
+	src/view/settingsDlgGtk.cpp
+	src/model/settings_mng_ds.cpp
+	src/model/fbResolutionsGetter.cpp
+	src/model/grubInstaller.cpp
+	src/view/scriptAddDlgGtk.cpp
+	src/view/aboutDialogGtk.cpp
+	src/presenter/glibMutex.cpp
+	src/presenter/glibThreadController.cpp
+	src/presenter/commonClass.cpp
+	src/presenter/streamLogger.cpp
+)
+
+
+add_executable(grubcfg-proxy
+	src/model/entry.cpp
+	src/model/rule.cpp
+	src/model/script.cpp
+	src/model/proxy.cpp
+	src/presenter/grubcfg_proxy_main.cpp
+	src/presenter/commonClass.cpp
+)
+
+target_link_libraries(gpc
+    ${GTKMM_LIBRARIES} ${GTHREAD_LIBRARIES}  )
+
+configure_file ("config.h.in" "${CMAKE_CURRENT_SOURCE_DIR}/src/config.h")
+
+
+install(TARGETS grubcfg-proxy
+	DESTINATION lib/gpc)
+
+install(TARGETS gpc 
+	DESTINATION bin)
+
+install(FILES misc/manpage.gz
+	DESTINATION share/man/man1
+	RENAME gpc.1.gz)
+
+install(FILES translation/translation-de.mo
+	DESTINATION share/locale/de/LC_MESSAGES/
+	RENAME gpc.mo)
+
+install(FILES misc/GPC.desktop
+	DESTINATION /usr/share/applications
+)
+
+install(FILES misc/icons/16x16.png DESTINATION /usr/share/icons/hicolor/16x16/apps RENAME gpc.png)
+install(FILES misc/icons/22x22.png DESTINATION /usr/share/icons/hicolor/22x22/apps RENAME gpc.png)
+install(FILES misc/icons/24x24.png DESTINATION /usr/share/icons/hicolor/24x24/apps RENAME gpc.png)
+install(FILES misc/icons/32x32.png DESTINATION /usr/share/icons/hicolor/32x32/apps RENAME gpc.png)
+install(FILES misc/icons/48x48.png DESTINATION /usr/share/icons/hicolor/48x48/apps RENAME gpc.png)
+install(FILES misc/icons/64x64.png DESTINATION /usr/share/icons/hicolor/64x64/apps RENAME gpc.png)
+install(FILES misc/icons/128x128.png DESTINATION /usr/share/icons/hicolor/128x128/apps RENAME gpc.png)
+install(FILES misc/icons/gpc.svg DESTINATION /usr/share/icons/hicolor/128x128/apps RENAME gpc.svg)
+
+configure_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
+    IMMEDIATE @ONLY)
+
+add_custom_target(uninstall
+    COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
+

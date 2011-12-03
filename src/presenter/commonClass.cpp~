@@ -1,0 +1,46 @@
+/*
+ * Copyright (C) 2011 Sebastian Grebe <sebigrebe@googlemail.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
+#include "commonClass.h"
+
+CommonClass::CommonClass() {
+	this->logger = NULL;
+}
+
+void CommonClass::setLogger(Logger& logger) {
+	this->logger = &logger;
+}
+Logger const& CommonClass::getLogger() const {
+	if (this->logger == NULL) {
+		throw LOGGER_NOT_SET;
+	}
+	return *this->logger;
+}
+Logger& CommonClass::getLogger() {
+	if (this->logger == NULL) {
+		throw LOGGER_NOT_SET;
+	}
+	return *this->logger;
+}
+Logger* CommonClass::getLoggerPtr() {
+	return this->logger;
+}
+bool CommonClass::hasLogger() const {
+	return this->logger != NULL;
+}
+void CommonClass::log(std::string const& message, Logger::Priority prio) const {
+	if (this->logger) {
+		this->logger->log(message, prio);
+	}
+}

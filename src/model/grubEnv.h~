@@ -1,0 +1,40 @@
+/*
+ * Copyright (C) 2011 Sebastian Grebe <sebigrebe@googlemail.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
+#ifndef GRUBENV_INCLUDED
+#define GRUBENV_INCLUDED
+
+#include <string>
+#include <cstdio>
+#include "mountTable.h"
+#include <cstdlib>
+#include <dirent.h>
+#include "../presenter/commonClass.h"
+
+struct GrubEnv : public CommonClass {
+	enum Mode {
+		GRUB_MODE,
+		BURG_MODE
+	};
+	GrubEnv();
+	bool init(GrubEnv::Mode mode, std::string const& dir_prefix);
+	bool check_cmd(std::string const& cmd, std::string const& cmd_prefix = "") const;
+	bool check_dir(std::string const& dir) const;
+	std::string getRootDevice();
+	std::string cfg_dir, cfg_dir_noprefix, mkconfig_cmd, cfg_dir_prefix, update_cmd, install_cmd, output_config_file, output_config_dir, settings_file;
+	bool burgMode;
+	std::list<GrubEnv::Mode> getAvailableModes();
+};
+
+#endif

@@ -1,0 +1,11 @@
+In order to get this program installed follow these steps:
+1:Install all dependencies
+	-sudo apt-get install lsb-cxx
+	-sudo apt-get install gtkmm-2.4
+	-sudo apt-get install menu
+2:Open the terminal and navigate into the folder of GPC called GPC-"Ver"
+3:Type these commands
+	-cmake .
+	-make
+	-sudo make install
+Finished!!

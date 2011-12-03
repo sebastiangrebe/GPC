@@ -1,0 +1,5 @@
+#define BINDIR "/usr/local/bin"
+#define LIBDIR "/usr/local/lib/gpc"
+#define LOCALEDIR "/usr/local/share/locale"
+#define PARTCHOOSER_MOUNTPOINT "/media/gpc_recovery_root_mountpoint"
+#define GC_VERSION "1.0.0"

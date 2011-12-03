@@ -1,0 +1,57 @@
+#ifndef SELECT_ROOT_DLG_GTK_INCLUDED
+#define SELECT_ROOT_DLG_GTK_INCLUDED
+#include <gtkmm.h>
+#include "../model/deviceDataList.h"
+#include "../model/mountTable.h"
+#include "../interface/evt_partitionChooser.h"
+#include <libintl.h>
+#include <locale.h>
+#include "../config.h"
+#include "../interface/partitionChooser.h"
+#include "../presenter/commonClass.h"
+
+class PartitionChooserGtk : public PartitionChooser, public CommonClass {
+	Gtk::Assistant* assistant;
+	Gtk::Label lblMessage, lblSubmountpointDescription;
+	Gtk::ListViewText lvRootPartitionSelection;
+	Gtk::ScrolledWindow scrRootPartitionSelection;
+	Gtk::HBox hbCustomPartition;
+	Gtk::CheckButton chkCustomPartition;
+	Gtk::Entry txtCustomPartition;
+	Gtk::VBox vbIntroPage, vbRootSelectPage, vbAdditionalMountSelectionPage;
+	Gtk::ScrolledWindow scrAdditionalMountSelectionPage;
+	Gtk::VBox vbAdditionalMountSelectionPageList;
+	bool isMounted;
+	Gtk::HBox hbMountButtons;
+	Gtk::Button bttMountFs, bttUmountFs;
+	bool submountpoint_toggle_run_event;
+	EventListener_partitionChooser* eventListener;
+	void init(bool useExisting = true);
+	Gtk::Assistant& getWindow();
+	public:
+	PartitionChooserGtk();
+	void setEventListener(EventListener_partitionChooser& eventListener);
+	void updateSensitivity();
+	void signal_custom_partition_toggled();
+	void signal_lvRootPartitionSelection_changed();
+	void signal_custom_partition_typing();
+	void signal_btt_mount_click();
+	void signal_btt_umount_click();
+	void on_cancel();
+	void on_apply();
+
+	std::string getSelectedDevice();
+	void addPartitionSelectorItem(std::string const& device, std::string const& type, std::string const& label);
+	void clearPartitionSelector();
+	void addSubmountpoint(std::string const& mountpoint, bool isMounted);
+	void removeAllSubmountpoints();
+	void submountpoint_toggle(Gtk::CheckButton& sender);
+	void showErrorMessage(MountExceptionType type);
+	void hide();
+	Gtk::CheckButton& getSubmountpointCheckboxByLabel(Glib::ustring const& label);
+	void setSubmountpointSelectionState(std::string const& submountpoint, bool new_isSelected);
+	void setIsMounted(bool isMounted);
+	void setIsStartedManually(bool val);
+};
+#endif
+
